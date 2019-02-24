@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<style>
+			* {
+				border-color: red;
+				border-style: solid;
+			}
+			.wrapper > div {
+				display: inline-block;
+			}
+			.blue {
+				background-color: blue;
+				color: white;
+				height: 50px;
+				width: 50px;
+			}
+			.green {
+				background-color: green;
+				color: white;
+				height: 50px;
+				width: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<table class="wrapper">
+	    	{% for j in range(0,numberInteger2,1): %}
+	    		{% if j%2 == 0: %}
+		    		<tr>
+			    	{% for i in range(0,numberInteger1,1): %}
+			    		{% if i%2 == 0: %}
+			    		<th class="blue">Box</th>
+			    		{% endif %}
+			    		{% if i%2 == 1: %}
+			    		<th class="green">Box</th>
+			    		{% endif %}
+			    	{% endfor %}
+			    	</tr>
+			    {% endif %}
+			    {% if j%2 == 1: %}
+			    	<tr>
+			    	{% for i in range(0,numberInteger1,1): %}
+			    		{% if i%2 == 0: %}
+			    		<th class="green">Box</th>
+			    		{% endif %}
+			    		{% if i%2 == 1: %}
+			    		<th class="blue">Box</th>
+			    		{% endif %}
+			    	{% endfor %}
+			    	</tr>
+			    {% endif %}
+		    {% endfor %}
+		</table>
+	</body>
+</html>
